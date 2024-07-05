@@ -26,13 +26,33 @@ public class TransferPage {
         return new DashboardPage();
     }
 
-    public void makeTransfer(String amountToTransfer, DataHelper.CardInfo cardInfo) {
-        amountInput.setValue(amountToTransfer);
-        fromInput.setValue(cardInfo, DataHelper.getCardNumber());
-        transferButton.click();
+    public void makeTransfer(String sum, DataHelper.CardInfo cardInfo) {
+        sumField.setValue(sum);
+        fromField.setValue(cardInfo.getCardNumber());
+        button.click();
     }
 
     public void findErrorMessage(String expectedText) {
         errorMassage.shouldHave(text(expectedText), Duration.ofSeconds(15)).shouldBe(visible);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
